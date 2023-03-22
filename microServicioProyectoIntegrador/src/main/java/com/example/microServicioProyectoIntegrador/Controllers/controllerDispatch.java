@@ -31,8 +31,8 @@ public class controllerDispatch {
         return this.serviceDispatch.updateDispatch(updateDispatch);
     }
 
-    @GetMapping("/dispatch/{stateEnvio}/{cedulaEmpleado}")
-    public Dispatch getDispatchGuiaState(@PathVariable("stateEnvio") String stateEnvio, @PathVariable("cedulaEmpleado") int cedula){
+    @GetMapping("/dispatch")
+    public Dispatch getDispatchGuiaState(@RequestParam String stateEnvio, @RequestParam int cedula){
         return this.serviceDispatch.getDispatch(stateEnvio, cedula);
     }
 }
