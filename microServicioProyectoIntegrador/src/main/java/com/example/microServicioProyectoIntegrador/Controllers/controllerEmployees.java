@@ -4,6 +4,8 @@ package com.example.microServicioProyectoIntegrador.Controllers;
 import com.example.microServicioProyectoIntegrador.Models.Employee;
 import com.example.microServicioProyectoIntegrador.Services.ServiceEmployees;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,18 +17,21 @@ public class controllerEmployees {
 
 
     @PostMapping("/employees")
-    public void addEmployee(@RequestBody Employee employee){
+    public ResponseEntity<String> addEmployee(@RequestBody Employee employee){
         this.serviceEmployess.addEmployee(employee);
+        return new ResponseEntity<>("Empleado creado con éxito", HttpStatus.CREATED);
     }
 
     @PutMapping("/employees")
-    public void updateEmployee(@RequestBody Employee employee){
+    public ResponseEntity<String> updateEmployee(@RequestBody Employee employee){
         this.serviceEmployess.updateEmployee(employee);
+        return new ResponseEntity<>("Empleado Actualizado con éxito", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/employees/{cedula}")
-    public void deleteEmployee(@PathVariable("cedula") int cedula){
+    public ResponseEntity<String> deleteEmployee(@PathVariable("cedula") int cedula){
         this.serviceEmployess.deleteEmployee(cedula);
+        return new ResponseEntity<>("El Empleado con cedula "+ cedula + " fue eliminado con éxito", HttpStatus.CREATED);
     }
 
     @GetMapping("/employees/{cedula}")

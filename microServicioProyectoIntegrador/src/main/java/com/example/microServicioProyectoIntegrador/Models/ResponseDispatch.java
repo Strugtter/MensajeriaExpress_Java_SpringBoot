@@ -3,18 +3,18 @@ package com.example.microServicioProyectoIntegrador.Models;
 public class ResponseDispatch {
 
     private String numberGuia;
-    private String estadoEnvio;
+    private String ultimoEstado;
 
-    public ResponseDispatch(String numberGuia, String estadoEnvio) {
+    public ResponseDispatch(String numberGuia, String ultimoEstado) {
         this.numberGuia = numberGuia;
-        this.estadoEnvio = estadoEnvio;
+        this.ultimoEstado = ultimoEstado;
     }
 
     public String getNumberGuia() {
         return numberGuia;
     }
 
-    public String getEstadoEnvio() {
-        return estadoEnvio;
+    public String getultimoEstado() {
+        return ultimoEstado;
     }
 }

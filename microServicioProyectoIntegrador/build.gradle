@@ -13,8 +13,13 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+	// http://localhost:8080/swagger-ui/index.html
 }
 
 tasks.named('test') {

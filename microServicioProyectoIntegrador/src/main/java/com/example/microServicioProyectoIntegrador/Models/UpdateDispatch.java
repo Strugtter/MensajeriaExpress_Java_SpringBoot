@@ -2,17 +2,17 @@ package com.example.microServicioProyectoIntegrador.Models;
 
 public class UpdateDispatch {
 
-    private long numeroGuia;
+    private String numeroGuia;
     private String estadoEnvio;
     private int cedulaEmpleado;
 
-    public UpdateDispatch(long numeroGuia, String estadoEnvio, int cedulaEmpleado) {
+    public UpdateDispatch(String numeroGuia, String estadoEnvio, int cedulaEmpleado) {
         this.numeroGuia = numeroGuia;
         this.estadoEnvio = estadoEnvio;
         this.cedulaEmpleado = cedulaEmpleado;
     }
 
-    public long getNumeroGuia() {
+    public String getNumeroGuia() {
         return numeroGuia;
     }
 
